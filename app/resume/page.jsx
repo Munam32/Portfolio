@@ -92,9 +92,8 @@ const education = {
     "Computer Science student with a proven track record in building smart, scalable, and AI-enhanced web platforms.",
   items: [
     {
-      institution:
-        "National University of Computer and Emerging Sciences (FAST-NUCES)",
-      degree: "Bachelors in computer Science",
+      institution: "FAST NUCES Lahore",
+      degree: "Bachelors in Computer Science",
       duration: "2023 - 2027",
     },
     {
