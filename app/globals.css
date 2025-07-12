@@ -1,26 +1,85 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1130px;
+  --breakpoint-2xl: 1520px;
+
+  --font-primary: "JetBrains Mono";
+
+  --color-primary: #1c1c22;
+  --color-accent: #00ff99;
+  --color-accent-hover: #00e187;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .text-accent {
+    color: var(--color-accent);
   }
+  .hover\:text-accent:hover {
+    color: var(--color-accent-hover);
+  }
+  .border-accent {
+    border-color: var(--color-accent);
+  }
+  .hover\:border-accent:hover {
+    border-color: var(--color-accent-hover);
+  }
+  .header {
+    padding-inline: 15px;
+    /* defualt : 10px */
+  }
+  .py-12 {
+    padding: 15px;
+    /* default: 10px */
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  .group:hover .group-hover\:text-outline-hover {
+    -webkit-text-stroke: 1px #00ff99;
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-scroll-right {
+    animation: scroll-right 35s linear infinite;
+  }
+
+  @keyframes ping {
+    75%,
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  .animate-ping {
+    animation: var(--animate-ping);
+  } /* ping 1s cubic-bezier(0, 0, 0.2, 1) infinite */
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply font-primary bg-primary text-white leading-loose;
+  }
+  .h1 {
+    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold;
+  }
 }
