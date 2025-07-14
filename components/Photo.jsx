@@ -20,7 +20,7 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px]
+          className="w-[298px] h-[298px] xl:w-[505px] xl:h-[498px]
           mix-blend-lighten absolute py-12"
         >
           <Image
@@ -41,7 +41,7 @@ const Photo = () => {
           xmlns="http://w3.org/2000/svg"
         >
           <motion.circle
-            cx="250"
+            cx="253"
             cy="253"
             r="250"
             stroke="#00ff99"
